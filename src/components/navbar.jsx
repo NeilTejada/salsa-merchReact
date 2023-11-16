@@ -5,7 +5,7 @@ import "./navbar.css";
 
 function Navbar() {
   return (
-    <div className="container">
+    <div className="nav-container">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <a className="navbar-brand" href="#">
           Smackin Smokin Salsa
