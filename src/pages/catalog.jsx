@@ -26,8 +26,6 @@ function Catalog() {
   function filter(selectCategory) {
     let list = [];
 
-    //find the products that match the category and add it to the list.
-
     for (let i = 0; i < products.length; i++) {
       let prod = products[i];
       console.log(prod);
@@ -45,7 +43,7 @@ function Catalog() {
 
   return (
     <div className="catalog-container">
-      <h1>Salsa & Merch</h1>
+      <h1>Salsa and Merch</h1>
       <button onClick={clearFilters} className="btn btn-sm btn-danger">
         Clear Filters
       </button>
@@ -57,7 +55,7 @@ function Catalog() {
           {arrowCategories}
         </button>
       ))}
-      <div className="products-container">
+      <div className="products-container page">
         {productsToDisplay.map((arrowProduduct) => (
           <Products key={arrowProduduct.id} data={arrowProduduct} />
         ))}

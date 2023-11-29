@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import "./home.css";
 
 function Home() {
   return (
-    <div>
-      <h1>Welcome to My Homepage</h1>
-      <Link to="/catalog">Go to Catalog</Link>
+    <div className="home page">
+      <h3>Welcome to My Homepage</h3>
+      <h1>Fresh Salsa and Merch!</h1>
+      <div>image here...</div>
     </div>
   );
 }

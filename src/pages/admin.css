@@ -1,0 +1,4 @@
+.admin .section-container {
+  display: flex;
+  justify-content: space-between;
+}
