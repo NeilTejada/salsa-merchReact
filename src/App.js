@@ -7,6 +7,7 @@ import Catalog from "./pages/catalog";
 import About from "./pages/about";
 import Home from "./pages/home";
 import Admin from "./pages/admin";
+import Contact from "./pages/contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/about" element={<About />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>

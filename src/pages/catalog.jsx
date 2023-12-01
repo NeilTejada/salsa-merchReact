@@ -52,7 +52,7 @@ function Catalog() {
           onClick={() => filter(arrowCategories)}
           className="btn btn-sm btn-primary btn-filter"
         >
-          {arrowCategories}
+          {arrowCategories}-
         </button>
       ))}
       <div className="products-container page">

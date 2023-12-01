@@ -14,13 +14,16 @@ function Navbar() {
           Home
         </Link>
         <Link className="nav-link-active" aria-current="page" to="/catalog">
-          Catalog
+          Salsa & Merch
         </Link>
         <Link className="nav-link-active" aria-current="page" to="/about">
           About
         </Link>
         <Link className="nav-link-active" aria-current="page" to="/admin">
           Admin
+        </Link>
+        <Link className="nav-link-active" aria-current="page" to="/contact">
+          Contact
         </Link>
         <form className="d-flex" role="search">
           <input
