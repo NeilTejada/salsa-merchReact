@@ -8,7 +8,6 @@ function Products(props) {
   const [totalPrice, setTotalPrice] = useState(props.data.price);
 
   useEffect(() => {
-    console.log("hello, I'm a product!");
     // Update total price when the selected quantity changes
     const updatedTotalPrice = props.data.price * selectedQuantity;
     setTotalPrice(updatedTotalPrice);
@@ -17,6 +16,10 @@ function Products(props) {
   const handleQuantityChange = (quantity) => {
     setSelectedQuantity(quantity);
   };
+
+  function addToCart() {
+    console.log(props.data.title);
+  }
 
   return (
     <div className="products-container">
@@ -29,10 +32,12 @@ function Products(props) {
         <h5 className="product-title">{props.data.title}</h5>
         <div className="prices">
           <div>
-            <label className="price">Price: {props.data.price}</label>
+            <label className="price">
+              Price: ${props.data.price.toFixed(2)}
+            </label>
           </div>
           <div>
-            <label className="total">Total: {totalPrice}</label>
+            <label className="total">Total: ${totalPrice.toFixed(2)}</label>
           </div>
         </div>
         <div className="quantity-picker">
@@ -40,6 +45,9 @@ function Products(props) {
             quantity={selectedQuantity}
             onQuantityChange={handleQuantityChange}
           />
+          <button onClick={addToCart} className="btn btn-sm btn-outline-dark">
+            <i class="fa-solid fa-cart-plus"></i>
+          </button>
         </div>
       </div>
     </div>
