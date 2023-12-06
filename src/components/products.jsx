@@ -1,11 +1,14 @@
 // Products.jsx
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./products.css";
 import QuantityPicker from "../components/quantityPicker";
+import GlobalContext from "../store/globalContext";
 
 function Products(props) {
   const [selectedQuantity, setSelectedQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(props.data.price);
+
+  let addProductToCart = useContext(GlobalContext).addProductToCart;
 
   useEffect(() => {
     // Update total price when the selected quantity changes
@@ -18,7 +21,10 @@ function Products(props) {
   };
 
   function addToCart() {
-    console.log(props.data.title);
+    let prod = { ...props.data };
+    prod.quantity = selectedQuantity;
+
+    addProductToCart(prod); //cal the global/context function
   }
 
   return (
@@ -46,7 +52,7 @@ function Products(props) {
             onQuantityChange={handleQuantityChange}
           />
           <button onClick={addToCart} className="btn btn-sm btn-outline-dark">
-            <i class="fa-solid fa-cart-plus"></i>
+            <i className="fa-solid fa-cart-plus"></i>
           </button>
         </div>
       </div>

@@ -8,8 +8,13 @@ function GlobalProvider(props) {
     email: "Neil@test.com",
   });
 
-  function addProductToCart() {
-    console.log("global add");
+  function addProductToCart(prod) {
+    //create a copy
+    let copy = [...cart];
+    //modify the copy
+    copy.push(prod);
+    //set the copy
+    setCart(copy);
   }
 
   function removeProductToCart() {

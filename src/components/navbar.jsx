@@ -7,6 +7,16 @@ import { useContext } from "react";
 
 function Navbar() {
   const user = useContext(GlobalContext).user;
+  const cart = useContext(GlobalContext).cart;
+
+  function getNumOfProducts() {
+    let total = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+      total += cart[i].quantity;
+    }
+    return total;
+  }
 
   return (
     <nav className="navbar bg-body-tertiary">
@@ -31,11 +41,12 @@ function Navbar() {
         </Link>
         <form className="d-flex" role="search">
           <button type="button" className="btn btn-outline-dark mx-2">
-            <i class="fa-regular fa-user"></i>
+            <i className="fa-regular fa-user"></i>
             {user.name}
           </button>
           <Link to="/cart" className="btn btn-outline-dark">
-            <i class="fa-solid fa-cart-shopping"></i>
+            {getNumOfProducts()}
+            <i className="fa-solid fa-cart-shopping"></i>
             Cart
           </Link>
         </form>

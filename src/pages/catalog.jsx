@@ -49,6 +49,7 @@ function Catalog() {
       </button>
       {categories.map((arrowCategories) => (
         <button
+          key={arrowCategories}
           onClick={() => filter(arrowCategories)}
           className="btn btn-sm btn-primary btn-filter"
         >
@@ -57,7 +58,7 @@ function Catalog() {
       ))}
       <div className="products-container page">
         {productsToDisplay.map((arrowProduduct) => (
-          <Products key={arrowProduduct.id} data={arrowProduduct} />
+          <Products key={arrowProduduct._id} data={arrowProduduct} />
         ))}
       </div>
     </div>

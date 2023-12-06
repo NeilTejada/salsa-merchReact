@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./quantityPicker.css";
 
 function QuantityPicker({ onQuantityChange }) {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     // Update the total price whenever the quantity changes
@@ -11,8 +11,8 @@ function QuantityPicker({ onQuantityChange }) {
   }, [quantity, onQuantityChange]);
 
   function decreaseQuantity() {
-    if (quantity === 0) {
-      setQuantity(0); // Reset the quantity to 0
+    if (quantity === 1) {
+      setQuantity(1); // Reset the quantity to 0
     } else {
       let decreaseVal = quantity - 1;
       setQuantity(decreaseVal);
