@@ -8,6 +8,11 @@ function Admin() {
     image: "",
     price: "",
   });
+
+  const [allProducts, setAllProducts] = useState([]);
+
+  const [allCoupons, setAllCoupons] = useState([]);
+
   const [coupon, setCoupon] = useState({
     code: "",
     discount: "",
@@ -39,10 +44,17 @@ function Admin() {
 
   function saveProduct() {
     console.log(product);
+    let copy = [...allProducts];
+    copy.push(product);
+    setAllProducts(copy);
   }
 
   function saveCoupon() {
     console.log(coupon);
+    //save the coupon to allCoupons list
+    let copy = [...allCoupons];
+    copy.push(coupon);
+    setAllCoupons(copy);
   }
   return (
     <div className="admin page">
@@ -106,6 +118,16 @@ function Admin() {
             >
               Save Product
             </button>
+            <div>
+              {/*display the coupons code - discount*/}
+              {allProducts.map((pr) => (
+                <div key={pr.title} className="product-register">
+                  <img src={"/images/" + pr.image} alt="" />
+                  <label className="lbl-title">{pr.title}</label>
+                  <label className="lbl-price">${pr.price}</label>
+                </div>
+              ))}
+            </div>
           </form>
         </div>
         <div className="coupons">
@@ -141,8 +163,17 @@ function Admin() {
               type="button"
               className="btn btn-primary"
             >
-              Save Product
+              Save Coupon
             </button>
+            <div>
+              {/*display the coupons code - discount*/}
+              {allCoupons.map((cp) => (
+                <div key={cp.code} className="coupon">
+                  <label>{cp.code}</label>
+                  <label>{cp.discount}</label>
+                </div>
+              ))}
+            </div>
           </form>
         </div>
       </div>

@@ -32,3 +32,6 @@
 .cart .prod-cart img {
   height: 65px;
 }
+.cart .discount-form {
+  border: 1px solid grey;
+}

@@ -14,6 +14,15 @@ function Cart() {
     return total;
   }
 
+  function getTotalOrder() {
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+      const prod = cart[i];
+      total += prod.price * prod.quantity;
+    }
+    return total.toFixed(2);
+  }
+
   return (
     <div className="cart page">
       <h1>Your Shopping Cart</h1>
@@ -40,7 +49,30 @@ function Cart() {
           ))}
         </div>
         <div className="side">
-          <h3>Total</h3>
+          <h3>Total:</h3>
+          <h1>${getTotalOrder()}</h1>
+          <hr />
+          <div className="discount-form input-group mb-3">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter Coupon Code"
+              aria-label="Coupon Code"
+              aria-describedby="button-addon2"
+            />
+            <button
+              className="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+            >
+              Apply
+            </button>
+          </div>
+
+          <hr />
+          <button type="button" className="btn btn-warning">
+            Complete Order
+          </button>
         </div>
       </div>
     </div>
