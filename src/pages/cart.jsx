@@ -56,7 +56,7 @@ function Cart() {
             <input
               type="text"
               className="form-control"
-              placeholder="Enter Coupon Code"
+              placeholder="Coupon Code"
               aria-label="Coupon Code"
               aria-describedby="button-addon2"
             />

@@ -25,13 +25,23 @@ body {
 .product-title {
   font-size: 18px;
   margin: 8px 0;
-  color: #333;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .prices {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.price {
+  font-style: italic;
+}
+
+.total {
+  font-weight: bold;
+  color: red;
 }
 
 .quantity-picker {

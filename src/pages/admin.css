@@ -18,3 +18,17 @@
 .admin.product-register .lbl-price {
   flex: 1;
 }
+
+.admin .products,
+.admin .coupons {
+  width: 45%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.admin .products h2,
+.admin .coupons h2 {
+  margin-bottom: 10px;
+}

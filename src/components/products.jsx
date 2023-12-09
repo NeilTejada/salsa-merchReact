@@ -51,7 +51,7 @@ function Products(props) {
             quantity={selectedQuantity}
             onQuantityChange={handleQuantityChange}
           />
-          <button onClick={addToCart} className="btn btn-sm btn-outline-dark">
+          <button onClick={addToCart} className=" cart btn btn-sm btn-outline-dark">
             <i className="fa-solid fa-cart-plus"></i>
           </button>
         </div>
