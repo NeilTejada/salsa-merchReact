@@ -3,14 +3,20 @@
   justify-content: space-between;
 }
 .admin .coupon {
-  border: 1px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 .admin .coupon label {
   flex: 1;
 }
-.admin .product-register img {
+.admin .product-register img.left {
   width: 100px;
   height: 80px;
+  margin-right: 1px;
 }
 .admin .product-register .lbl-title {
   flex: 5;
@@ -31,4 +37,27 @@
 .admin .products h2,
 .admin .coupons h2 {
   margin-bottom: 10px;
+}
+.admin .product-register {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.admin .product-register .middle {
+  flex: 1;
+}
+
+.admin .product-register .right {
+  flex: 1;
+  text-align: right;
+  margin-left: 10px;
+}
+.admin .products button {
+  margin-bottom: 20px;
+}
+.admin .coupons button {
+  margin-bottom: 20px;
 }

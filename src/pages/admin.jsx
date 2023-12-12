@@ -122,9 +122,13 @@ function Admin() {
               {/*display the coupons code - discount*/}
               {allProducts.map((pr) => (
                 <div key={pr.title} className="product-register">
-                  <img src={"/images/" + pr.image} alt="" />
-                  <label className="lbl-title">{pr.title}</label>
-                  <label className="lbl-price">${pr.price}</label>
+                  <img src={"/images/" + pr.image} alt="" className="left" />
+                  <div className="middle">
+                    <label className="lbl-title">{pr.title}</label>
+                  </div>
+                  <div className="right">
+                    <label className="lbl-price">${pr.price}</label>
+                  </div>
                 </div>
               ))}
             </div>
