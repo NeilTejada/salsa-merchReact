@@ -1,5 +1,4 @@
-//This is just an example and need to be filled in with what I want.
-//Need at least 7 categories.
+import axios from "axios";
 
 let catalog = [
   {
@@ -54,9 +53,18 @@ let catalog = [
 ];
 
 class DataService {
-  getProducts() {
+  async getProducts() {
     //want to display the products
-    return catalog;
+    //return catalog;
+
+    //call the server
+    let response = await axios.get("http://127.0.0.1:5000/api/product");
+    return response.data;
+  }
+
+  async saveProduct(prod) {
+    let response = await axios.post("http://127.0.0.1:5000/api/product", prod);
+    return response.data;
   }
 }
 

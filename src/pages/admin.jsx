@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./admin.css";
+import DataService from "../services/dataService";
 
 function Admin() {
   const [product, setProduct] = useState({
@@ -17,6 +18,16 @@ function Admin() {
     code: "",
     discount: "",
   });
+
+  useEffect(function () {
+    loadProduct();
+  }, []);
+
+  async function loadProduct() {
+    let service = new DataService();
+    let prods = await service.getProducts();
+    setAllProducts(prods);
+  }
 
   function handleProductForm(e) {
     let text = e.target.value;
@@ -47,6 +58,13 @@ function Admin() {
     let copy = [...allProducts];
     copy.push(product);
     setAllProducts(copy);
+
+    //send to the server
+    let fixedProduct = { ...product };
+    fixedProduct.price = parseFloat(product.price);
+
+    let service = new DataService();
+    service.saveProduct(fixedProduct);
   }
 
   function saveCoupon() {

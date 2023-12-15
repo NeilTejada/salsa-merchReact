@@ -13,9 +13,9 @@ function Catalog() {
     loadCatalog();
   }, []);
 
-  function loadCatalog() {
+  async function loadCatalog() {
     let service = new DataService();
-    let prods = service.getProducts();
+    let prods = await service.getProducts();
     setProducts(prods);
     console.log(prods);
     let categoryList = ["Salsa", "Shirt", "Hat"];

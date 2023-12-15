@@ -18,3 +18,9 @@
   background-color: white;
   margin-left: 20%;
 }
+.catalog-container {
+  text-align: center;
+}
+.products-container {
+  max-width: 900px;
+}
